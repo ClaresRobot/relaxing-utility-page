@@ -9,7 +9,6 @@
 body {
     font-family: 'Segoe UI', 'Noto Sans', sans-serif;
     min-height: 100vh;
-    background: url("Assets/Background1.jpg") center / cover no-repeat fixed;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -391,7 +390,7 @@ body {
     margin-bottom: 10px;
     display: grid;
     gap: 4px;
-    background-image: url("Assets/Mediodia.jpg");
+    background-image: url("assets/Mediodia.jpg");
     background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
@@ -463,7 +462,7 @@ body {
     padding: 8px 10px;
     border: 1px solid rgba(120, 180, 255, 0.4);
     border-radius: 6px;
-    background-image: url("Assets/Naturaleza.jpg");
+    background-image: url("assets/Naturaleza.jpg");
     background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
