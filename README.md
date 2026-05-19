@@ -3,7 +3,7 @@ Small utility page with a variety of different tools all in one screen. Made to 
 
 ## Features:
 
-### 
+### To-Do List
 - Add tasks with title, due date and priority level (low / medium / high)
 - Mark tasks as complete via checkbox
 - Edit and delete tasks inline
@@ -11,7 +11,7 @@ Small utility page with a variety of different tools all in one screen. Made to 
 - Task counter showing total, completed and pending
 - Persistent storage via `localStorage`
 
-### 
+### Weather forecast
 - Automatic geolocation with fallback to Madrid
 - Current temperature, weather description and wind speed
 - 7-day forecast with animated SVG weather icons
@@ -63,3 +63,26 @@ Small utility page with a variety of different tools all in one screen. Made to 
 | News       | RSS2JSON API                        |
 | Storage    | localStorage                        |
 ----------------------------------------------------
+
+## Learning Goals
+
+This project was built as a practice exercise covering:
+
+- Semantic HTML structure and accessibility basics
+- CSS Grid layout for multi-panel dashboards
+- CSS custom effects: glassmorphism, glossy gradients, layered pseudo-elements
+- Vanilla JS patterns: DOM manipulation, event delegation, async/await
+- Working with third-party REST APIs and RSS feeds
+- Browser storage with `localStorage`
+- Responsive design for mobile
+- Integrating third-party CSS frameworks
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+
