@@ -9,6 +9,7 @@
 body {
     font-family: 'Segoe UI', 'Noto Sans', sans-serif;
     min-height: 100vh;
+    background: center / cover no-repeat fixed;
     display: flex;
     align-items: flex-start;
     justify-content: center;
