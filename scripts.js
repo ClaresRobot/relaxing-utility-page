@@ -397,11 +397,10 @@ function renderStyleSelector() {
         select.appendChild(option);
     });
 
-    const saved = localStorage.getItem(STYLE_KEY);
-    if (saved) {
-        select.value = saved;
-        applyStyle(saved);
-    }
+
+const saved = localStorage.getItem(STYLE_KEY) || "fondo-calma";
+select.value = saved;
+applyStyle(saved);
 
     select.addEventListener("change", () => applyStyle(select.value));
 }
