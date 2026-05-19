@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmazingUtilityPage</title>
+  <link rel="stylesheet" href="https://unpkg.com/7.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+
+  <div class="top-panels">
+
+    <!-- Columna 1. Selector de estilos -->
+    <div class="window glass active panel-styles">
+      <div class="title-bar">
+        <div class="title-bar-text">Estilo</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <label for="styleSelector">Fondo</label>
+        <select id="styleSelector">
+          <option value="">-- Elige --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Columna 2 Todo list -->
+    <div class="window glass active panel-left">
+      <div class="title-bar">
+        <div class="title-bar-text">Lista de tareas</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <form id="todoForm" autocomplete="off">
+          <div class="group">
+            <label for="taskText">Tarea</label>
+            <input type="text" id="taskText" placeholder="Escribe una nueva tarea" required />
+          </div>
+          <div class="group">
+            <label for="taskDue">Fecha límite</label>
+            <input type="date" id="taskDue" />
+          </div>
+          <div class="group">
+            <label for="taskPriority">Importancia</label>
+            <select id="taskPriority">
+              <option value="low">Baja</option>
+              <option value="medium" selected>Media</option>
+              <option value="high">Alta</option>
+            </select>
+          </div>
+          <button type="submit" class="default">Añadir tarea</button>
+        </form>
+        <hr>
+        <p id="todoStats"></p>
+        <ul id="todoList"></ul>
+      </div>
+    </div>
+
+    <!-- Columna 3. Clima -->
+    <div class="window glass active panel-right">
+      <div class="title-bar">
+        <div class="title-bar-text">Clima — Pronóstico semanal</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>
+            <span></span>
+            <span id="widget-temp">23°C</span>
+            <span id="widget-location">Madrid · Hoy</span>
+            <span id="widget-description">Parcialmente soleado · 12 km/h</span>
+          </div>
+          <div id="widget-clock"></div>
+        </div>
+        <ul id="forecast-list"></ul>
+        <div class="status-bar" style="margin-top: 8px;">
+          <p class="status-bar-field" id="widget-humidity">Humedad 68%</p>
+          <p class="status-bar-field" id="widget-uv">UV Medio</p>
+          <p class="status-bar-field" id="widget-pressure">Presión 1015 hPa</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna 1 Bloc de notas -->
+    <div class="window glass active panel-notes">
+      <div class="title-bar">
+        <div class="title-bar-text">Bloc de notas</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space" style="padding: 0;">
+        <textarea id="notepad" placeholder="Escribe aquí tus notas..."></textarea>
+      </div>
+    </div>
+
+    <!-- Columna 3. Reproductor musica -->
+    <div class="window glass active panel-player">
+      <div class="title-bar">
+        <div class="title-bar-text">Reproductor de música</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space" style="padding: 0;">
+        <iframe
+          src="/webdeck-player/index.html"
+          width="100%"
+          height="250"
+          frameborder="0"
+          scrolling="no"
+          style="display:block;">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Columna 2 Calculadora -->
+    <div class="window glass active panel-calc">
+      <div class="title-bar">
+        <div class="title-bar-text">Calculadora</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <div id="calc">
+          <div id="calc-display">
+            <div id="calc-expression"></div>
+            <div id="calc-result">0</div>
+          </div>
+          <div id="calc-buttons">
+            <button data-calc="clear" class="calc-wide">C</button>
+            <button data-calc="sign">+/-</button>
+            <button data-calc="percent">%</button>
+            <button data-calc="op" data-val="/">÷</button>
+
+            <button data-calc="num" data-val="7">7</button>
+            <button data-calc="num" data-val="8">8</button>
+            <button data-calc="num" data-val="9">9</button>
+            <button data-calc="op"  data-val="*">×</button>
+
+            <button data-calc="num" data-val="4">4</button>
+            <button data-calc="num" data-val="5">5</button>
+            <button data-calc="num" data-val="6">6</button>
+            <button data-calc="op"  data-val="-">−</button>
+
+            <button data-calc="num" data-val="1">1</button>
+            <button data-calc="num" data-val="2">2</button>
+            <button data-calc="num" data-val="3">3</button>
+            <button data-calc="op"  data-val="+">+</button>
+
+            <button data-calc="num" data-val="0" class="calc-wide">0</button>
+            <button data-calc="decimal">.</button>
+            <button data-calc="equals">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Columna 1 Cita del día -->
+    <div class="window glass active panel-quote">
+      <div class="title-bar">
+        <div class="title-bar-text">Cita del día</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <div id="quote-content">
+          <p id="quote-text">Cargando cita...</p>
+          <p id="quote-author"></p>
+          <p id="quote-tags" class="quote-meta"></p>
+          <p id="quote-id" class="quote-meta"></p>
+        </div>
+        <button type="button" id="quote-refresh">Nueva cita</button>
+      </div>
+    </div>
+
+    <!-- Columna 3 Noticias -->
+    <div class="window glass active panel-news">
+      <div class="title-bar">
+        <div class="title-bar-text">Noticias</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <div id="news-controls">
+          <select id="news-source">
+            <option value="https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada">El País</option>
+            <option value="https://www.elmundo.es/rss/portada.xml">El Mundo</option>
+            <option value="https://feeds.bbci.co.uk/news/world/rss.xml">BBC World</option>
+            <option value="https://rss.nytimes.com/services/xml/rss/nyt/World.xml">NY Times</option>
+          </select>
+          <button type="button" id="news-refresh">↻</button>
+        </div>
+        <ul id="news-list"></ul>
+      </div>
+    </div>
+
+        <!-- Columna 3 About Me -->
+    <div class="window glass active panel-aboutme">
+      <div class="title-bar">
+        <div class="title-bar-text">Información</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <h2>Sobre esta página</h2>
+        <p>¡Bienvenido/a a mi página web! Esta web sirve como "Utility page", y su proposito es tener diferentes tipos de utilidades que los usuarios
+          puedan disfrutar. Actualmente incluye una lista de tareas, un pronóstico del clima, un bloc de notas, un reproductor de música,
+          una calculadora, una cita del día y un lector de noticias. La idea es que sea un espacio versátil donde puedas acceder a varias herramientas
+          útiles en un solo lugar, con un aspecto relajado y visualmente atractivo.
+        <h3>Creación de la página</h3>
+        <p>Esta página fue creada enteramente en HTML, CSS y JavaScript. Se utilizó un framework de CSS para obtener el estilo característico de Windows 7,
+          y varias APIs públicas para obtener diferentes datos. Es una demostración de mis habilidades en desarrollo Fullstack, un pequeño proyecto personal
+          para prácticar desarrollo web general. Me plantearé añadir nuevas utilidades en el futuro, además de una traducción al inglés.
+        <h3>Agradecimientos</h3>
+        <p>Doy las gracias a: <a href="https://github.com/khang-nd/7.css/">7.css</a>, <a href="https://github.com/Makin-Things/weather-icons">weather-icons</a>
+        , <a href="https://open-meteo.com/">Open-Meteo</a>, <a href="https://webdeckplayer.neocities.org/">Web Deck Player</a>, <a href="https://www.thequoteshub.com/api/">The Quote Hub</a>
+        , <a href="https://rss2json.com/">RSS2JSON</a> y a los dueños de todas las imagenes utilizadas en la página web. </p>
+        
+        <p> 
+          <br>
+          <hr>
+          <br>
+          <a class="github-button" href="https://github.com/ClaresRobot" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @ClaresRobot on GitHub">Follow @ClaresRobot</a>
+          <img src="assets\buttons\anybrowser2.gif" alt="Any Browser">
+          <img src="assets\buttons\bookmark_this_page.gif" alt="Bookmark this page">
+          <img src="assets\buttons\site_best_viewed_with_monitor.gif" alt="Site best viewed with monitor">
+          <br>
+          <br>
+        </p>
+        <h4 class="firma">Página creada por Clares Parro</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
